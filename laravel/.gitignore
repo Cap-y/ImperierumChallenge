@@ -1,0 +1,10 @@
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+vendor/
+/bootstrap/compiled.php
+/vendor
+composer.phar
+.env
