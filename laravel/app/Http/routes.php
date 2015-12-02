@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
+
+Route::resource('users', 'UserController');
+
+
+/*
+Route::get('/users', 'UserController@index');
+Route::get('/users', 'UserController@index');
+
+
+Route::get('/welcome', function () {
     return view('welcome');
-});
+});*/
+
+
