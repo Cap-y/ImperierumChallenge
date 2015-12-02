@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class controllerName extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +18,9 @@ class controllerName extends Controller
      */
     public function index()
     {
-        //
+        /*var_dump(DB::table('users')->get());*/
+        
+        return view('user');
     }
 
     /**
@@ -48,7 +52,15 @@ class controllerName extends Controller
      */
     public function show($id)
     {
-        //
+
+        /*$users = DB::table('users')->get();
+        /*var_dump($users);*/
+        /*$json = $users[0]->toJson();
+        var_dump($json);    */
+        $user = User::find($id);
+        
+
+        return $user->toJson();
     }
 
     /**
