@@ -5,5 +5,3 @@ Homestead.json
 .env
 /bootstrap/compiled.php
 composer.phar
-/config
-
