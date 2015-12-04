@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Challenge as Challenge;
+use Illuminate\Http\JsonResponse;
 
-class controllerName extends Controller
+class ChallengeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -48,7 +50,8 @@ class controllerName extends Controller
      */
     public function show($id)
     {
-        //
+        $challenge = Challenge::find($id);
+        return $challenge->toJson(); 
     }
 
     /**
