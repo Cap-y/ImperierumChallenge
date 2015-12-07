@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Route::resource('users', 'UserController');
 
+Route::resource('questions', 'QuestionController');
+
 Route::resource('challenges', 'ChallengeController');
