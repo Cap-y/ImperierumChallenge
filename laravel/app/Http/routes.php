@@ -11,12 +11,10 @@
 |
 */
 
-
-Route::resource('users', 'UserController');
-
-
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('users', 'UserController');
 
+Route::resource('challenges', 'ChallengeController');
