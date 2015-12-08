@@ -36,4 +36,11 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function challenges(){
+        return $this->belongsToMany('App\Challenge', 'user_challanges');
+    }
+    public function result(){
+        return $this->belongsToMany('App\result', 'user_result');
+    }
 }

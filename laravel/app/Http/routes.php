@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::resource('users', 'UserController');
 
 Route::resource('challenges', 'ChallengeController');
+
+
+Route::resource('api/flow', 'FlowController');
+
