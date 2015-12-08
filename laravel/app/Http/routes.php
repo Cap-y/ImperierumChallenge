@@ -20,3 +20,7 @@ Route::resource('users', 'UserController');
 Route::resource('questions', 'QuestionController');
 
 Route::resource('challenges', 'ChallengeController');
+
+
+Route::resource('api/flow', 'FlowController');
+

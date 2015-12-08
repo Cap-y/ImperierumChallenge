@@ -58,7 +58,6 @@ return [
             'database'  => env('DB_DATABASE', 'temp'),
             'username'  => env('DB_USERNAME', 'root'),
             'password'  => env('DB_PASSWORD', 'liav14'),
-
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
