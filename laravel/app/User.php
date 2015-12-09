@@ -21,7 +21,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'user';
 
     /**
      * The attributes that are mass assignable.
@@ -39,9 +39,9 @@ class User extends Model implements AuthenticatableContract,
 
 
     public function challenges(){
-        return $this->belongsToMany('App\Challenge', 'user_challanges');
+        return $this->belongsToMany('App\Challenge', 'users_challenges');
     }
-    public function result(){
-        return $this->belongsToMany('App\result', 'user_result');
+    public function results(){
+        return $this->belongsToMany('App\Result', 'users_challenges_results');
     }
 }
