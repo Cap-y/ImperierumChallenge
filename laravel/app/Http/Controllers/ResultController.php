@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Question as Question;
-use Illuminate\Http\JsonResponse;
 
-class QuestionController extends Controller
+class ResultController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +16,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::all();
-        return $questions->toJson();
+        //
     }
 
     /**
@@ -51,8 +48,7 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        $question = Question::find($id);
-        return $question->toJson();
+        //
     }
 
     /**

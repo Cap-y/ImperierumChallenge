@@ -13,17 +13,11 @@
 
 
 Route::resource('users', 'UserController');
+
+Route::resource('questions', 'QuestionController');
+
 Route::resource('challenges', 'ChallengeController');
 
+Route::resource('api/flow', 'FlowController');
 
 
-/*
-Route::get('/users', 'UserController@index');
-Route::get('/users', 'UserController@index');
-
-
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-*/
