@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
             ]);
         }*/
 
-        DB::table('user')->insert([
+        DB::table('users')->insert([
  			'firstname'=>str_random(10),
  			'lastname'=>str_random(10),
  			'alias'=>str_random(10),
