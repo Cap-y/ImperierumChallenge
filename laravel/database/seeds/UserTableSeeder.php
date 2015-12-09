@@ -23,7 +23,6 @@ class UserTableSeeder extends Seeder
  			'lastname'=>str_random(10),
  			'alias'=>str_random(10),
  			'city'=>str_random(10),
-
         	]);
 
 
