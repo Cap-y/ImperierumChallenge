@@ -12,7 +12,7 @@ class CreateUsersChallengesResultsTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_challenges_options', function (Blueprint $table) {
+        Schema::create('users_challenges_results', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
@@ -31,6 +31,6 @@ class CreateUsersChallengesResultsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users_challenges_options');
+        Schema::drop('users_challenges_results');
     }
 }

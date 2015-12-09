@@ -21,33 +21,23 @@ class FlowController extends Controller
     public function index(){
 
         $get_public_challenges = DB::table('challenges')
-                ->join('user', 'challenges.admin' , '=', 'user.id')
+                ->join('users', 'challenges.admin' , '=', 'users.id')
                 ->where('challenges.secrecy', '=', '1')
                 ->get(); //Get all public challengers
 
-        $get_public_users_acceptions = DB::table('user_challenge')
-                ->join('challenges', 'user_challenge.challenge_id', '=','challenges.id')
+        $get_public_users_acceptions = DB::table('users_challenges')
+                ->join('challenges', 'users_challenges.challenge_id', '=','challenges.id')
                 ->where('challenges.secrecy', '=', '1')
                 ->get(); //Get all users in new public challengers
 
-        $get_public_results = DB::table('user_results')
-                ->join('challenges', 'user_results.challenge_id', '=', 'challenges.id')
-                ->join('user_challenge', 'user_results.challenge_id', '=', 'user_challenge.challenge_id')
-                ->join('questions', 'user_results.question_id', '=', 'questions.id')
-                ->join('user', 'user_results.user_id', '=', 'user.id')
-                ->where('user_challenge.active', '=', '0')
-                ->where('challenges.secrecy', '=', '1')
-                ->get();
-            dd($get_public_results);
-
         $get_public_results = DB::table('users_challenges_results')
-                ->join('challenges', 'users_challenges_results.challange_id', '=', 'challanges.id')
+                ->join('challenges', 'users_challenges_results.challenge_id', '=', 'challenges.id')
                 ->join('results', 'users_challenges_results.result_id', '=', 'results.id')
-                ->join('users', 'users_challenges_results.challange_id', '=', 'users.id')
-                ->where('challenges.secrecy', '=', '1')->where('user_challenge.active', '=', '0')
+                ->join('users', 'users_challenges_results.challenge_id', '=', 'users.id')
+                ->join('users_challenges', 'users_challenges_results.challenge_id', '=', 'users_challenges.challenge_id')
+                ->where('challenges.secrecy', '=', '1')->where('users_challenges.active', '=', '0')
                 ->get(); //Get user results of closed challenegers
-
-
+            dd($get_public_results);
 
         $data = array_merge($get_public_challenges, $get_public_users_acceptions, $get_public_results);
         
@@ -89,14 +79,14 @@ class FlowController extends Controller
         
         
 
-        $user = DB::table('connections')
+        /*$user = DB::table('connections')
             ->join('users_connections', 'connections.id', '=', 'users_connections.connection_id')
             ->where('user_id', '=', $user_id)
             ->get();
 
             
             
-            dd($user);
+            dd($user);*/
             //->join('challenges', 'users_challenges_results.challange_id', '=', 'challanges.id')
     }
 
