@@ -14,14 +14,10 @@
 
 Route::resource('users', 'UserController');
 
+Route::resource('questions', 'QuestionController');
 
-/*
-Route::get('/users', 'UserController@index');
-Route::get('/users', 'UserController@index');
+Route::resource('challenges', 'ChallengeController');
 
-
-Route::get('/welcome', function () {
-    return view('welcome');
-});*/
+Route::resource('api/flow', 'FlowController');
 
 

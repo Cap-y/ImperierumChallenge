@@ -17,6 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
+
     }
 
     /**
@@ -48,9 +49,15 @@ class UserController extends Controller
      */
     public function show($id){
         $user = User::find($id);
-        return ($user);
-   
-    
+        $uservalues = array(
+            $user->firstname,
+            $user->lastname,
+            $user->alias,
+            $user->city
+            );
+        $uservalues.toJson();
+        
+
 }
     /*
      * Show the form for editing the specified resource.

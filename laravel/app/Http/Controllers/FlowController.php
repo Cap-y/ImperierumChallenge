@@ -6,20 +6,48 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Question as Question;
 use Illuminate\Http\JsonResponse;
 
-class QuestionController extends Controller
+use DB;
+
+class FlowController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $questions = Question::all();
-        return $questions->toJson();
+    public function index(){
+
+        $get_public_challenges = DB::table('challenges')
+                ->join('user', 'challenges.admin' , '=', 'user.id')
+                ->where('challenges.secrecy', '=', '1')
+                ->get(); //Get all public challengers
+
+        $get_public_users_acceptions = DB::table('user_challenge')
+                ->join('challenges', 'user_challenge.challenge_id', '=','challenges.id')
+                ->where('challenges.secrecy', '=', '1')
+                ->get(); //Get all users in new public challengers
+
+        $get_public_results = DB::table('user_results')
+                ->join('challenges', 'user_results.challenge_id', '=', 'challenges.id')
+                ->join('user_challenge', 'user_results.challenge_id', '=', 'user_challenge.challenge_id')
+                ->join('questions', 'user_results.question_id', '=', 'questions.id')
+                ->join('user', 'user_results.user_id', '=', 'user.id')
+                ->where('user_challenge.active', '=', '0')
+                ->where('challenges.secrecy', '=', '1')
+                ->get();
+        $get_public_results = DB::table('users_challenges_results')
+                ->
+
+
+
+            dd($get_public_results);
+
+        $data = array_merge($get_public_challenges, $get_public_users_acceptions, $get_public_results);
+        
+
+        return json_encode($data);//$challange->toJson();
     }
 
     /**
@@ -51,8 +79,7 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        $question = Question::find($id);
-        return $question->toJson();
+        //
     }
 
     /**
