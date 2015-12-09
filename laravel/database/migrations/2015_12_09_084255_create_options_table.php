@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOptionTable extends Migration
+class CreateOptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,7 @@ class CreateOptionTable extends Migration
     {
         Schema::create('options', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('optionname');
-            $table->string('picurl');
+            $table->string('option');
             $table->timestamps();
         });
     }

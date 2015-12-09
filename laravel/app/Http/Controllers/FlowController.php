@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -37,12 +38,16 @@ class FlowController extends Controller
                 ->where('user_challenge.active', '=', '0')
                 ->where('challenges.secrecy', '=', '1')
                 ->get();
-        $get_public_results = DB::table('users_challenges_results')
-                ->
-
-
-
             dd($get_public_results);
+
+        $get_public_results = DB::table('users_challenges_results')
+                ->join('challenges', 'users_challenges_results.challange_id', '=', 'challanges.id')
+                ->join('results', 'users_challenges_results.result_id', '=', 'results.id')
+                ->join('users', 'users_challenges_results.challange_id', '=', 'users.id')
+                ->where('challenges.secrecy', '=', '1')->where('user_challenge.active', '=', '0')
+                ->get(); //Get user results of closed challenegers
+
+
 
         $data = array_merge($get_public_challenges, $get_public_users_acceptions, $get_public_results);
         
@@ -79,7 +84,20 @@ class FlowController extends Controller
      */
     public function show($id)
     {
-        //
+        //$user_id = Session::get('user_id');
+        $user_id = 1;
+        
+        
+
+        $user = DB::table('connections')
+            ->join('users_connections', 'connections.id', '=', 'users_connections.connection_id')
+            ->where('user_id', '=', $user_id)
+            ->get();
+
+            
+            
+            dd($user);
+            //->join('challenges', 'users_challenges_results.challange_id', '=', 'challanges.id')
     }
 
     /**

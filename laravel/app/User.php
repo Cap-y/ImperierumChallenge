@@ -44,4 +44,7 @@ class User extends Model implements AuthenticatableContract,
     public function results(){
         return $this->belongsToMany('App\Result', 'users_challenges_results');
     }
+    public function connections(){
+        return $this->belongsToMany('App\Connection', 'users_connections');
+    }
 }
