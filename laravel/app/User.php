@@ -37,8 +37,6 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
-<<<<<<< HEAD
-=======
 
 
     public function challenges(){
@@ -50,5 +48,5 @@ class User extends Model implements AuthenticatableContract,
     public function connections(){
         return $this->belongsToMany('App\Connection', 'users_connections');
     }
->>>>>>> e18acbcba24c8a4b3fe00d3c5e9824bc219137bc
+
 }
