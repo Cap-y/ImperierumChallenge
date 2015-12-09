@@ -16,7 +16,7 @@ class CreateUsersConnectionsTable extends Migration
             $table->increments('id');
             $table->integer('connection_id')->unsigned();
             $table->foreign('connection_id')->references('id')->on('connections');
-            $table->integer('friend_id')
+            $table->integer('friend_id');
             $table->timestamps();
         });
     }
