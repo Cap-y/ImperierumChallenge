@@ -10,7 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::get('/', function(){
+	return View::make('index');
+});
 
 Route::resource('users', 'UserController');
 
