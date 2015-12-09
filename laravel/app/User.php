@@ -16,6 +16,7 @@ class User extends Model implements AuthenticatableContract,
 {
     use Authenticatable, Authorizable, CanResetPassword;
 
+    protected $fillable = ['firstname','lastname','alias','city'];
     /**
      * The database table used by the model.
      *
@@ -36,11 +37,4 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
-
-    public function challenges(){
-        return $this->belongsToMany('App\Challenge', 'user_challanges');
-    }
-    public function result(){
-        return $this->belongsToMany('App\result', 'user_result');
-    }
 }

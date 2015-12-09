@@ -18,7 +18,8 @@ class ChallengeController extends Controller
      */
     public function index()
     {
-        //
+        $challenges = Challenge::all();
+        return $challenges -> toJson();
     }
 
     /**
