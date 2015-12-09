@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User as User;
+use Illuminate\Http\JsonResponse;
 
 class UserController extends Controller
 {
@@ -48,16 +49,18 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id){
+
         $user = User::find($id);
         $uservalues = array(
             $user->firstname,
             $user->lastname,
             $user->alias,
-            $user->city
+            $user->city,
+            $user->profilepic
             );
-        $uservalues.toJson();
-        
-
+        $jsondata = json_encode($uservalues);
+        return $jsondata; 
+    
 }
     /*
      * Show the form for editing the specified resource.
