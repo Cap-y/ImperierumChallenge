@@ -14,7 +14,7 @@
 Route::get('/', function(){
 	return View::make('index');
 });
->>>>>>> submaster
+
 
 Route::resource('users', 'UserController');
 
