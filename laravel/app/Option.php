@@ -4,7 +4,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Challenge extends Model{
-	 protected $table = 'results';
+	 protected $table = 'options';
 
 	
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuestionsOptionsTable extends Migration
+class CreateUsersChallengesResultsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,14 @@ class CreateQuestionsOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions_options', function (Blueprint $table) {
+        Schema::create('users_challenges_options', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('challenge_id')->unsigned();
             $table->foreign('challenge_id')->references('id')->on('challenges');
-            $table->integer('question_id')->unsigned();
-            $table->foreign('question_id')->references('id')->on('questions');
+            $table->integer('result_id')->unsigned();
+            $table->foreign('result_id')->references('id')->on('results');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateQuestionsOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('questions_options');
+        Schema::drop('users_challenges_options');
     }
 }

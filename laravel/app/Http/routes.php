@@ -11,10 +11,19 @@
 |
 */
 
-Route::get('/', function () {
+
+Route::resource('users', 'UserController');
+Route::resource('challenges', 'ChallengeController');
+
+
+
+/*
+Route::get('/users', 'UserController@index');
+Route::get('/users', 'UserController@index');
+
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::resource('users', 'UserController');
-
-Route::resource('challenges', 'ChallengeController');
+*/

@@ -14,14 +14,13 @@ class CreateChallengesTable extends Migration
     {
         Schema::create('challenges', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
             $table->string('description');
             $table->integer('type');
             $table->integer('admin');
             $table->integer('secrecy');
             $table->string('thumbnail');
+            $table->integer('active');
             $table->timestamps();
         });
     }
