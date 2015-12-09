@@ -1,29 +1,31 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\User as User;
 class UserTableSeeder extends Seeder
 {
    
     public function run()
     {
-        /*$faker = Faker\factory::create();
+        $faker = Faker\factory::create();
 
-        foreach ($range(1,20) as $index) {
+       
+
+        foreach (range(1,20) as $index) {
             User::create([
                 'firstname' => $faker->name,
                 'lastname' => $faker->name,
                 'alias' => $faker->email,
                 'city' => $faker->city
             ]);
-        }*/
+        }
 
-        DB::table('user')->insert([
+        /*DB::table('users')->insert([
  			'firstname'=>str_random(10),
  			'lastname'=>str_random(10),
  			'alias'=>str_random(10),
  			'city'=>str_random(10),
-        	]);
+        	]);*/
 
 
 
