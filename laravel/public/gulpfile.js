@@ -9,22 +9,22 @@ gulp.task('default', function() {
 });
 
 gulp.task('css', function() {
-  watch('./www/css/**/*.sass', function (event) {
+  watch('./sass/**/*.sass', function (event) {
         console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-        gulp.src('./www/css/**/*.sass')
-            .pipe(sass({ includePaths : ['./www/css/tools'] }))
+        gulp.src('./sass/**/*.sass')
+            .pipe(sass({ includePaths : ['./sass/tools'] }))
 			.pipe(autoprefixer())
-            .pipe(gulp.dest('./www/src/'));
+            .pipe(gulp.dest('./src/'));
     });
 });
 
 gulp.task('js', function() {
-    watch('./www/js/**/*.js', function (event) {
+    watch('./js/**/*.js', function (event) {
         console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-		gulp.src('./www/js/**/*.js')
+		gulp.src('./js/**/*.js')
             .pipe(concat('main.js'))
 			//.pipe(uglify())
-            .pipe(gulp.dest('./www/src/'));
+            .pipe(gulp.dest('./src/'));
     });
   
 });

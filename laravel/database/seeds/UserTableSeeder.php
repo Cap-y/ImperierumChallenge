@@ -20,7 +20,11 @@ class UserTableSeeder extends Seeder
             ]);
         }
 
+<<<<<<< HEAD
         /*DB::table('users')->insert([
+=======
+        DB::table('users')->insert([
+>>>>>>> 7574495ed664fdfa9b35d8d2e25518748c0829d5
  			'firstname'=>str_random(10),
  			'lastname'=>str_random(10),
  			'alias'=>str_random(10),
