@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User as User;
 
-class controllerName extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class controllerName extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -46,12 +47,19 @@ class controllerName extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    public function show($id){
+        $user = User::find($id);
+        $uservalues = array(
+            $user->firstname,
+            $user->lastname,
+            $user->alias,
+            $user->city
+            );
+        $uservalues.toJson();
+        
 
-    /**
+}
+    /*
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

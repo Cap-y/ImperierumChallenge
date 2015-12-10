@@ -3,11 +3,6 @@
 Homestead.yaml
 Homestead.json
 .env
-
-/vendor
-
 /bootstrap/compiled.php
-
 composer.phar
-
-.env
+/config

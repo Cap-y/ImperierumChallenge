@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Options as Options;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class controllerName extends Controller
+class OptionsController extends Controller
 {
     /**
      * Display a listing of the resource.
