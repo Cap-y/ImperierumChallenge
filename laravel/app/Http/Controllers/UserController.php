@@ -19,6 +19,9 @@ class UserController extends Controller
     public function index()
     {
 
+        $users = User::all();
+        return $users->toJson();
+
     }
 
     /**
@@ -28,7 +31,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
+        
     }
 
     /**
@@ -39,7 +43,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User;
+
+        $user->firstname = 'Billy';
+        $user->lastname = 'Bong';
+        $user->alias = 'Någon';
+        $user->city = 'Långtbortistan';
+        $user->profilepic = 'nope';
+        $user->secrecy = '1';
+
+        $user->save();
     }
 
     /**

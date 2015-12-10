@@ -27,9 +27,13 @@ class ChallengeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+
+    public function create($id){
+        
+        /********************************/
+        /*         Jesper Start         */
+        /********************************/
+        
     }
 
     /**
@@ -40,7 +44,17 @@ class ChallengeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $question = new Question;
+
+        $question->name = 'Har du bakat?';
+        $question->description = 'Lets bake them buns';
+        $question->type = '1';
+        $question->admin = '1';
+        $question->secrecy = '1';
+        $question->thumbnail = 'nope';
+        $question->active = '1';
+
+        $question->save();
     }
 
     /**
