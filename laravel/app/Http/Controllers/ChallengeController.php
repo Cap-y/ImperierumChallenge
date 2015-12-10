@@ -27,9 +27,11 @@ class ChallengeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create($id){
+        
+        /********************************/
+        /*         Jesper Start         */
+        /********************************/
     }
 
     /**

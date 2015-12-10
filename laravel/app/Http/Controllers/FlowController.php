@@ -19,7 +19,9 @@ class FlowController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-
+        /********************************/
+        /*     Jesper Svensson  START    */
+        /********************************/
         $get_public_challenges = DB::table('challenges')
                 ->join('users', 'challenges.admin' , '=', 'users.id')
                 ->where('challenges.secrecy', '=', '1')
@@ -37,12 +39,11 @@ class FlowController extends Controller
                 ->join('users_challenges', 'users_challenges_results.challenge_id', '=', 'users_challenges.challenge_id')
                 ->where('challenges.secrecy', '=', '1')->where('users_challenges.active', '=', '0')
                 ->get(); //Get user results of closed challenegers
-                
-                //dd($get_public_challenges);
-            
 
         $data = array_merge($get_public_challenges, $get_public_users_acceptions, $get_public_results);
-
+        /********************************/
+        /*     Jesper Svensson  STOP    */
+        /********************************/
         return json_encode($data);//$challange->toJson();
     }
 
@@ -73,15 +74,17 @@ class FlowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id){
+        /********************************/
+        /*     Jesper Svensson  START    */
+        /********************************/
         //$user_id = Session::get('user_id');
         $user_id = 1;
         
         $get_private_user_challenges = DB::table('users_challenges')
                 ->join('challenges', 'users_challenges.challenge_id', '=', 'challenges.id')
                 ->where('users_challenges.user_id', '=', $user_id)
-                ->get();//Get all YOUR results 
+                ->get();//Get all YOUR challlenges
         $get_private_user_results = DB::table('results') 
                 ->join('users_challenges_results', 'results.id', '=', 'users_challenges_results.result_id') 
                 ->where('users_challenges_results.user_id', '=', $user_id)
@@ -111,8 +114,9 @@ class FlowController extends Controller
             'get_connection_challenges' => $get_connection_challenges,
             'get_connection_results' => $get_connection_results
             );
-
-
+        /********************************/
+        /*     Jesper Svensson  STOP    */
+        /********************************/
             return json_encode($datarray);
     }
 
