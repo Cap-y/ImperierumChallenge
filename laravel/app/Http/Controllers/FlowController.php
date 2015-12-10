@@ -19,9 +19,13 @@ class FlowController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
+<<<<<<< HEAD
         /********************************/
         /*     Jesper Svensson  START    */
         /********************************/
+=======
+
+>>>>>>> tilo14
         $get_public_challenges = DB::table('challenges')
                 ->join('users', 'challenges.admin' , '=', 'users.id')
                 ->where('challenges.secrecy', '=', '1')
@@ -39,11 +43,19 @@ class FlowController extends Controller
                 ->join('users_challenges', 'users_challenges_results.challenge_id', '=', 'users_challenges.challenge_id')
                 ->where('challenges.secrecy', '=', '1')->where('users_challenges.active', '=', '0')
                 ->get(); //Get user results of closed challenegers
+<<<<<<< HEAD
 
         $data = array_merge($get_public_challenges, $get_public_users_acceptions, $get_public_results);
         /********************************/
         /*     Jesper Svensson  STOP    */
         /********************************/
+=======
+            dd($get_public_results);
+
+        $data = array_merge($get_public_challenges, $get_public_users_acceptions, $get_public_results);
+        
+
+>>>>>>> tilo14
         return json_encode($data);//$challange->toJson();
     }
 
@@ -74,6 +86,7 @@ class FlowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function show($id){
         /********************************/
         /*     Jesper Svensson  START    */
@@ -118,6 +131,24 @@ class FlowController extends Controller
         /*     Jesper Svensson  STOP    */
         /********************************/
             return json_encode($datarray);
+=======
+    public function show($id)
+    {
+        //$user_id = Session::get('user_id');
+        $user_id = 1;
+        
+        
+
+        /*$user = DB::table('connections')
+            ->join('users_connections', 'connections.id', '=', 'users_connections.connection_id')
+            ->where('user_id', '=', $user_id)
+            ->get();
+
+            
+            
+            dd($user);*/
+            //->join('challenges', 'users_challenges_results.challange_id', '=', 'challanges.id')
+>>>>>>> tilo14
     }
 
     /**

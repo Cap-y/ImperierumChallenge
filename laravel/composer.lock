@@ -1,4 +1,4 @@
-{
+﻿{
     "_readme": [
         "This file locks the dependencies of your project to a known state",
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
@@ -630,6 +630,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v5.1.26",
             "source": {
                 "type": "git",
@@ -640,6 +641,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/be7fbb60376bd61f07e9c637473e5b2cf7eebe5c",
                 "reference": "be7fbb60376bd61f07e9c637473e5b2cf7eebe5c",
+=======
+
+            "version": "v5.1.25",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "53979acc664debc401bfcb61086c4fc4f196b22d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/53979acc664debc401bfcb61086c4fc4f196b22d",
+                "reference": "53979acc664debc401bfcb61086c4fc4f196b22d",
+>>>>>>> tilo14
                 "shasum": ""
             },
             "require": {
@@ -755,6 +769,7 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
             "time": "2015-12-02 21:59:57"
         },
         {
@@ -810,6 +825,10 @@
                 "oauth"
             ],
             "time": "2015-10-16 15:39:46"
+=======
+
+            "time": "2015-11-30 19:24:36"
+>>>>>>> tilo14
         },
         {
             "name": "league/flysystem",
@@ -1692,6 +1711,10 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
+<<<<<<< HEAD
+=======
+
+>>>>>>> tilo14
                     "dev-master": "2.8-dev"
                 }
             },
@@ -1719,6 +1742,10 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
+=======
+
+>>>>>>> tilo14
             "time": "2015-10-30 20:15:42"
         },
         {
@@ -1906,6 +1933,7 @@
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
             "time": "2015-11-23 11:57:49"
+<<<<<<< HEAD
         },
         {
             "name": "symfony/polyfill-php56",
@@ -2014,6 +2042,8 @@
                 "shim"
             ],
             "time": "2015-11-04 20:28:58"
+=======
+>>>>>>> tilo14
         },
         {
             "name": "symfony/process",

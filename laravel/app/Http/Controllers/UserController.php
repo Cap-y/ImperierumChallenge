@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User as User;
+<<<<<<< HEAD:laravel/app/Http/Controllers/UserController.php
 use Illuminate\Http\JsonResponse;
+=======
+>>>>>>> tilo14:laravel/app/Http/Controllers/userController.php
 
 class UserController extends Controller
 {
@@ -19,9 +22,12 @@ class UserController extends Controller
     public function index()
     {
 
+<<<<<<< HEAD:laravel/app/Http/Controllers/UserController.php
         $users = User::all();
         return $users->toJson();
 
+=======
+>>>>>>> tilo14:laravel/app/Http/Controllers/userController.php
     }
 
     /**
@@ -62,6 +68,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id){
+<<<<<<< HEAD:laravel/app/Http/Controllers/UserController.php
 
         $user = User::find($id);
         $uservalues = array(
@@ -74,6 +81,18 @@ class UserController extends Controller
         $jsondata = json_encode($uservalues);
         return $jsondata; 
     
+=======
+        $user = User::find($id);
+        $uservalues = array(
+            $user->firstname,
+            $user->lastname,
+            $user->alias,
+            $user->city
+            );
+        $uservalues.toJson();
+        
+
+>>>>>>> tilo14:laravel/app/Http/Controllers/userController.php
 }
     /*
      * Show the form for editing the specified resource.

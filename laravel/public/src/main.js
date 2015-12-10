@@ -8,6 +8,7 @@ app.config(function($locationProvider, $routeProvider) {
 
 app.controller('homeCtrl', ["$scope", function($scope){
     
+<<<<<<< HEAD
     $scope.nav_profil = "Profil" /** ska länkas till profilsidan*/
    	$scope.nav_install ="Inställningar" /* ska länkas till settingssidan*/
    	$scope.nav_log = "Log Out" /* kopplas till utloggning via google auth*/
@@ -17,6 +18,10 @@ app.controller('homeCtrl', ["$scope", function($scope){
     $scope.button_bread ="Brödtext" /* innehåll till aktiv knapp*/
     $scope.flow_active = "FLÖDE - 1 2 eller 3" /* använd http://localhost:8000/api/flow för att streama öppet flöde */
    	
+=======
+    
+    $scope.title = "Test"
+>>>>>>> tilo14
     
     
 }]);

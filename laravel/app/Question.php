@@ -8,6 +8,7 @@ class Question extends Model
 {
     protected $table = 'questions';
 
+<<<<<<< HEAD
     public function challenges(){
     	return $this->belongsToMany('App\Challenge', 'challenges_questions');
     }
@@ -17,4 +18,6 @@ class Question extends Model
     }
 	
 
+=======
+>>>>>>> tilo14
 }

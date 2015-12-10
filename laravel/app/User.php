@@ -30,9 +30,13 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 >>>>>>> 08c8cbeb2b7b296e4d910507a6b9aa14de94b210
+=======
+    
+>>>>>>> tilo14
 
     /**
      * The attributes excluded from the model's JSON form.
