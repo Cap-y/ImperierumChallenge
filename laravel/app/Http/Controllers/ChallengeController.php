@@ -9,12 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Challenge as Challenge;
 use Illuminate\Http\JsonResponse;
 
-<<<<<<< HEAD:laravel/app/Http/Controllers/ChallengeController.php
 class ChallengeController extends Controller
-=======
-class OptionsController extends Controller
->>>>>>> tilo14:laravel/app/Http/Controllers/optionsController.php
-{
     /**
      * Display a listing of the resource.
      *
