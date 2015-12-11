@@ -16,6 +16,7 @@ class User extends Model implements AuthenticatableContract,
 {
     use Authenticatable, Authorizable, CanResetPassword;
 
+    protected $fillable = ['firstname','lastname','alias','city'];
     /**
      * The database table used by the model.
      *
@@ -28,7 +29,14 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+<<<<<<< HEAD
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 08c8cbeb2b7b296e4d910507a6b9aa14de94b210
+=======
+    
+>>>>>>> tilo14
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -43,4 +51,8 @@ class User extends Model implements AuthenticatableContract,
     public function results(){
         return $this->belongsToMany('App\Result', 'users_challenges_results');
     }
+    public function connections(){
+        return $this->belongsToMany('App\Connection', 'users_connections');
+    }
+
 }
