@@ -3,9 +3,6 @@
 Homestead.yaml
 Homestead.json
 .env
-<<<<<<< HEAD
-=======
 /bootstrap/compiled.php
 composer.phar
 /config
->>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
