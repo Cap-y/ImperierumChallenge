@@ -13,7 +13,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'debug' => env('APP_DEBUG', false),
+=======
+    'debug' => env('APP_DEBUG', true),
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +84,11 @@ return [
 
     'key' => env('APP_KEY', 'SomeRandomString'),
 
+<<<<<<< HEAD
     'cipher' => 'AES-256-CBC',
+=======
+    'cipher' => 'AES-128-CBC',
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
 
     /*
     |--------------------------------------------------------------------------

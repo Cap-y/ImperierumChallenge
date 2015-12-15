@@ -55,8 +55,13 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
+<<<<<<< HEAD
             'database'  => env('DB_DATABASE', 'forge'),
             'username'  => env('DB_USERNAME', 'forge'),
+=======
+            'database'  => env('DB_DATABASE', 'imperierum'),
+            'username'  => env('DB_USERNAME', 'root'),
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
             'password'  => env('DB_PASSWORD', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
