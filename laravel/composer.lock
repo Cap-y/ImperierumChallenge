@@ -1,11 +1,20 @@
+<<<<<<< HEAD
+{
+=======
 ﻿{
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
     "_readme": [
         "This file locks the dependencies of your project to a known state",
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
+    "hash": "5c6026b96e6fa11a641b51a6ba976f5e",
+    "content-hash": "5bd58fd976f1ee3e9611bc37c006ec46",
+=======
     "hash": "6039608ba53d8e2598bc8ce97af893f4",
     "content-hash": "9afdb7034ec0da951ec9478dbd5f65b0",
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -218,6 +227,8 @@
             "time": "2015-11-06 14:35:42"
         },
         {
+<<<<<<< HEAD
+=======
             "name": "guzzle/guzzle",
             "version": "v3.9.3",
             "source": {
@@ -484,6 +495,7 @@
             "time": "2015-11-03 01:34:55"
         },
         {
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -631,6 +643,9 @@
         {
             "name": "laravel/framework",
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
             "version": "v5.1.26",
             "source": {
                 "type": "git",
@@ -641,6 +656,8 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/be7fbb60376bd61f07e9c637473e5b2cf7eebe5c",
                 "reference": "be7fbb60376bd61f07e9c637473e5b2cf7eebe5c",
+<<<<<<< HEAD
+=======
 =======
 
             "version": "v5.1.25",
@@ -654,6 +671,7 @@
                 "url": "https://api.github.com/repos/laravel/framework/zipball/53979acc664debc401bfcb61086c4fc4f196b22d",
                 "reference": "53979acc664debc401bfcb61086c4fc4f196b22d",
 >>>>>>> tilo14
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
                 "shasum": ""
             },
             "require": {
@@ -773,6 +791,11 @@
             "time": "2015-12-02 21:59:57"
         },
         {
+=======
+<<<<<<< HEAD
+            "time": "2015-12-02 21:59:57"
+        },
+        {
             "name": "laravel/socialite",
             "version": "v2.0.14",
             "source": {
@@ -831,6 +854,7 @@
 >>>>>>> tilo14
         },
         {
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
             "name": "league/flysystem",
             "version": "1.0.15",
             "source": {
@@ -915,6 +939,8 @@
             "time": "2015-09-30 22:26:59"
         },
         {
+<<<<<<< HEAD
+=======
             "name": "league/oauth1-client",
             "version": "1.6.1",
             "source": {
@@ -978,6 +1004,7 @@
             "time": "2015-10-23 04:02:07"
         },
         {
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
             "name": "monolog/monolog",
             "version": "1.17.2",
             "source": {
@@ -1198,6 +1225,18 @@
         },
         {
             "name": "paragonie/random_compat",
+<<<<<<< HEAD
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "d762ee5b099a29044603cd4649851e81aa66cb47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/d762ee5b099a29044603cd4649851e81aa66cb47",
+                "reference": "d762ee5b099a29044603cd4649851e81aa66cb47",
+=======
             "version": "1.1.1",
             "source": {
                 "type": "git",
@@ -1208,6 +1247,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/paragonie/random_compat/zipball/a208865a5aeffc2dbbef2a5b3409887272d93f32",
                 "reference": "a208865a5aeffc2dbbef2a5b3409887272d93f32",
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
                 "shasum": ""
             },
             "require": {
@@ -1242,6 +1282,9 @@
                 "pseudorandom",
                 "random"
             ],
+<<<<<<< HEAD
+            "time": "2015-12-10 14:48:13"
+=======
             "time": "2015-12-01 02:52:15"
         },
         {
@@ -1292,6 +1335,7 @@
                 "response"
             ],
             "time": "2015-05-04 20:22:00"
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
         },
         {
             "name": "psr/log",
@@ -1713,8 +1757,11 @@
                 "branch-alias": {
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 >>>>>>> tilo14
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
                     "dev-master": "2.8-dev"
                 }
             },
@@ -1744,8 +1791,11 @@
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 >>>>>>> tilo14
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
             "time": "2015-10-30 20:15:42"
         },
         {
@@ -1934,6 +1984,9 @@
             "homepage": "https://symfony.com",
             "time": "2015-11-23 11:57:49"
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
         },
         {
             "name": "symfony/polyfill-php56",
@@ -2042,8 +2095,11 @@
                 "shim"
             ],
             "time": "2015-11-04 20:28:58"
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> tilo14
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
         },
         {
             "name": "symfony/process",
@@ -3016,6 +3072,18 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
+            "version": "4.8.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ea76b17bced0500a28098626b84eda12dbcf119c",
+                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c",
+=======
             "version": "4.8.19",
             "source": {
                 "type": "git",
@@ -3026,6 +3094,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b2caaf8947aba5e002d42126723e9d69795f32b4",
                 "reference": "b2caaf8947aba5e002d42126723e9d69795f32b4",
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
                 "shasum": ""
             },
             "require": {
@@ -3084,7 +3153,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
+            "time": "2015-12-12 07:45:58"
+=======
             "time": "2015-11-30 08:18:59"
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
         },
         {
             "name": "phpunit/phpunit-mock-objects",

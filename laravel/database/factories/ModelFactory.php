@@ -18,4 +18,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
     ];
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 32a113bd541bf428d50dcc2e5582edfe0d3cdff4
