@@ -2,11 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use App\User as User;
-
 use App\Challenge as Challenge;
 use App\Questions as Questions;
 use App\Options as Options;
->>>>>>> tilo14
+
 class UserTableSeeder extends Seeder
 {
    

@@ -18,6 +18,7 @@ class CreateResultsTable extends Migration
             $table->string('question1_option');
             $table->string('question1_answear');
             $table->string('question1_points');
+            $table->integer('secrecy');
             $table->timestamps();
         });
     }

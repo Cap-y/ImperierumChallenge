@@ -17,6 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->string('question');
             $table->integer('points');
             $table->integer('type');
+            $table->integer('correct');
             $table->timestamps();
         });
     }
