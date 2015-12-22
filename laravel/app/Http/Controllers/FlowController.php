@@ -121,7 +121,7 @@ class FlowController extends Controller
         /********************************/
             return json_encode($datarray);
 
-
+        }
     /**
      * Show the form for editing the specified resource.
      *

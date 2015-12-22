@@ -29,7 +29,10 @@
     <script src="lib/js/angular-route.min.js"></script>
     
     <!-- JS   -->
-    <script src="src/main.js"></script>
+    <!--<script src="src/main.js"></script>-->
+    <script src="js/app.js"></script>
+
+     <script src="js/ctrl/homeCtrl.js"></script>
   
 </body>
 </html>
