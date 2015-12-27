@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
+use Session;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 
-use App\User;
-use App\Challenge;
-use App\Friend;
-use App\Answers;
+use DB;
 
 class FlowController extends Controller
 {
@@ -20,53 +18,34 @@ class FlowController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
+
+        /********************************/
+        /*     Jesper Svensson  START    */
+        /********************************/
+
+        $get_public_challenges = DB::table('challenges')
+                ->join('users', 'challenges.admin' , '=', 'users.id')
+                ->where('challenges.secrecy', '=', '1')
+                ->get(); //Get all public challengers
+
+        $get_public_users_acceptions = DB::table('users_challenges')
+                ->join('challenges', 'users_challenges.challenge_id', '=','challenges.id')
+                ->where('challenges.secrecy', '=', '1')
+                ->get(); //Get all users in new public challengers
+
+        $get_public_results = DB::table('users_challenges_results')
+                ->join('challenges', 'users_challenges_results.challenge_id', '=', 'challenges.id')
+                ->join('results', 'users_challenges_results.result_id', '=', 'results.id')
+                ->join('users', 'users_challenges_results.challenge_id', '=', 'users.id')
+                ->join('users_challenges', 'users_challenges_results.challenge_id', '=', 'users_challenges.challenge_id')
+                ->where('challenges.secrecy', '=', '1')->where('users_challenges.active', '=', '0')
+                ->get(); //Get user results of closed challenegers
 
 
-        $get_public_challenges = Challenge::where('secrecy', '=', '1')
-                        ->orderBy('created_at', 'DESC')
-                        ->get(); // Get all open challenges
+        $data = array_merge($get_public_challenges, $get_public_users_acceptions, $get_public_results);
 
-        $count_public_challenges = count($get_public_challenges); //Count challenges
-
-        $get_closed_public_results = Answers::where('secrecy', '=', '1')
-                        ->orderBy('created_at', 'DESC')
-                        ->get();
-
-        dd($get_closed_public_results);
-
-        $get_user_open_flow;
-
-
-
-
-        //$user = User::find(1);
-
-        //$user->challenges()->attach(1);//Skriver koppling till tabel
-        
-
-        //$user1 = Challenge::find(1)->users; //Hämta alla challenges  som user 1 tillhör
-        //print_r($user1[0]->id);
-        
-        //$challenges1=User::find(1)->challenges;// Hämtar alla challenges som user med id 1 är med i
-        //print_r($challenges1[0]->secrecy.$challenges1[1]->name);
-
-        //dd($challenges1);
-        /*
-        $challange = DB::table('challenges')
-                        ->where('secrecy', '=', '1')
-                        ->orderBy('created_at', 'DESC')
-                        ->get();
-        $counter = count($challange);
-
-        for ($i=0; $i < $counter; $i++) { 
-            $first[$i] = $challange[$i];
-        }               
-
-        var_dump($first);*/
-        
-        return ;//$challange->toJson();
+        return json_encode($data);//$challange->toJson();
     }
 
     /**
@@ -96,10 +75,52 @@ class FlowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+
+    public function show($id){
+        /********************************/
+        /*     Jesper Svensson  START    */
+        /********************************/
+        //$user_id = Session::get('user_id');
+        $user_id = 1;
+        
+        $get_private_user_challenges = DB::table('users_challenges')
+                ->join('challenges', 'users_challenges.challenge_id', '=', 'challenges.id')
+                ->where('users_challenges.user_id', '=', $user_id)
+                ->get();//Get all YOUR challlenges
+        $get_private_user_results = DB::table('results') 
+                ->join('users_challenges_results', 'results.id', '=', 'users_challenges_results.result_id') 
+                ->where('users_challenges_results.user_id', '=', $user_id)
+                ->get();//Get all YOUR results 
+        $get_connection_challenges = DB::table('connections')
+                ->join('users_connections', 'connections.id', '=', 'users_connections.connection_id')
+                ->join('users_challenges', 'users_connections.friend_id', '=', 'users_challenges.user_id')
+                ->join('challenges', 'users_challenges.challenge_id', '=', 'challenges.id')
+                ->where('challenges.secrecy', '<=', '2')
+                ->where('connections.user_id', '=', $user_id)
+                ->get(); //Get all friends you connected to
+        $get_connection_results = DB::table('connections')
+                ->join('users_connections', 'connections.id', '=', 'users_connections.connection_id')
+                ->join('users_challenges_results', 'users_connections.friend_id', '=', 'users_challenges_results.user_id')
+                ->join('results', 'users_challenges_results.result_id', '=', 'results.id')
+                ->where('results.secrecy', '<=', '2')
+                ->get();
+        
+        $json_get_private_user_challenges = json_encode($get_private_user_challenges);
+        $json_get_private_user_results = json_encode($get_private_user_results);
+        $json_get_connection_challenges = json_encode($get_connection_challenges);
+        $json_get_connection_results = json_encode($get_connection_results);
+
+        $datarray = array(
+            'get_private_user_challenges' => $get_private_user_challenges,
+            'get_private_user_results' => $get_private_user_results,
+            'get_connection_challenges' => $get_connection_challenges,
+            'get_connection_results' => $get_connection_results
+            );
+        /********************************/
+        /*     Jesper Svensson  STOP    */
+        /********************************/
+            return json_encode($datarray);
+
 
     /**
      * Show the form for editing the specified resource.
