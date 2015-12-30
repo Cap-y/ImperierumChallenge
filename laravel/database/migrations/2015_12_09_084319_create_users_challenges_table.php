@@ -17,7 +17,7 @@ class CreateUsersChallengesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('challenge_id')->unsigned();
-            $table->foreign('challenge_id')->references('id')->on('users');
+            $table->foreign('challenge_id')->references('id')->on('challenges');
             $table->integer('active');
             $table->timestamps();
         });
