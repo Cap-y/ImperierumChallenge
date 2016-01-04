@@ -10,18 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-<<<<<<< HEAD
 
-=======
->>>>>>> tilo14
-Route::get('/', function(){
-	return View::make('index');
-});
-
-<<<<<<< HEAD
-
-=======
->>>>>>> tilo14
 Route::resource('users', 'UserController');
 
 Route::resource('questions', 'QuestionController');
