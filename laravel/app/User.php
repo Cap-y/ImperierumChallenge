@@ -32,12 +32,6 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
 
-
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
     protected $hidden = ['password', 'remember_token'];
 
 

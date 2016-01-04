@@ -15,11 +15,11 @@ Route::get('/', function(){
 });
 
 
-Route::resource('users', 'UserController');
+Route::resource('api/users', 'UserController');
 
-Route::resource('questions', 'QuestionController');
+Route::resource('api/questions', 'QuestionController');
 
-Route::resource('challenges', 'ChallengeController');
+Route::resource('api/challenges', 'ChallengeController');
 
 Route::resource('api/flow', 'FlowController');
 
