@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="app" lang="en">
+<html>
 <head>
      <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>title</title>
+    
     
     <!-- CSS   -->
     <link href="src/style.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     
 </head>
 <body>
-   <div ng-view>
+   <div ng-view ng-app="app">
        
    </div>    
      
@@ -33,7 +33,7 @@
     <script src="js/app.js"></script>
 
      <script src="js/ctrl/homeCtrl.js"></script>
-  
+
 </body>
 </html>
 

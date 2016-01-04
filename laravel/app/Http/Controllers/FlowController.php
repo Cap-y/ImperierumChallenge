@@ -8,7 +8,7 @@ use Session;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
-
+use Symfony\Component\HttpFoundation\Response;
 use DB;
 
 class FlowController extends Controller
@@ -43,9 +43,11 @@ class FlowController extends Controller
                 ->get(); //Get user results of closed challenegers
 
 
-        $data = array_merge($get_public_challenges, $get_public_users_acceptions, $get_public_results);
+        //$data = array_merge($get_public_challenges, $get_public_users_acceptions, $get_public_results);
+        $data = array('flow' =>  array_merge($get_public_challenges, $get_public_users_acceptions, $get_public_results));
+        //return json_encode($data);//$challange->toJson();
+        return response()->json($data);
 
-        return json_encode($data);//$challange->toJson();
     }
 
     /**
