@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User as User;
-use App/Http/Controllers/UserController.php;
+
 use Illuminate\Http\JsonResponse;
 
 
@@ -69,14 +69,14 @@ class UserController extends Controller
 
         $user = User::find($id);
         $uservalues = array(
-            $user->firstname,
-            $user->lastname,
-            $user->alias,
-            $user->city,
-            $user->profilepic
+            'firstname' => $user->firstname,
+            'lastname' => $user->lastname,
+            'alias' => $user->alias,
+            'city' => $user->city,
+            'profilpic' => $user->profilepic
             );
-        $jsondata = json_encode($uservalues);
-        return $jsondata; 
+        $jsondata = array('user' => ($uservalues));
+        return response()->json($jsondata);
     
 
         $user = User::find($id);

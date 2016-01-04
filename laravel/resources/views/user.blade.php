@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<!-- views för user -->
+
+
+<!--<!DOCTYPE html>
 <html>
 <head>
 	<title>USER</title>
