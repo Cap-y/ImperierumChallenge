@@ -1,1 +1,0 @@
-<!-- views för specifik aktivitet -->

@@ -11,11 +11,16 @@
 |
 */
 
-Route::resource('users', 'UserController');
+Route::get('/', function(){
+	return View::make('index');
+});
 
-Route::resource('questions', 'QuestionController');
 
-Route::resource('challenges', 'ChallengeController');
+Route::resource('api/users', 'UserController');
+
+Route::resource('api/questions', 'QuestionController');
+
+Route::resource('api/challenges', 'ChallengeController');
 
 Route::resource('api/flow', 'FlowController');
 
