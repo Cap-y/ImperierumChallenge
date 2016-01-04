@@ -54,6 +54,7 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
+
             'host'      => env('DB_HOST', '194.47.151.37'),
             'database'  => env('DB_DATABASE', 'imperierum'),
             'username'  => env('DB_USERNAME', 'imperierum'),
