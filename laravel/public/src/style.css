@@ -1,0 +1,24 @@
+body{
+	background-image: url(https://scontent-arn2-1.xx.fbcdn.net/hphotos-xlp1/v/t1.0-9/12079282_10153217238007749_5296593411807228861_n.jpg?oh=0aebe99cf5bfbaa0db36d45e8885ba97&oe=5702D3B6);
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+   filter:alpha(opacity=90);
+   -moz-opacity:0.9;
+   -khtml-opacity: 0.9;
+   opacity: 0.9;
+
+}
+#bodygrad {
+	 filter:alpha(opacity=40);
+   -moz-opacity:0.4;
+   -khtml-opacity: 0.4;
+   opacity: 0.4;
+    height: 600px;
+    background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white, blue); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, blue); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, green); /* Standard syntax (must be last) */
+}

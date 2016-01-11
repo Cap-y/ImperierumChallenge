@@ -9,8 +9,13 @@ class Challenge extends Model{
 	public function users(){
         return $this->belongsToMany('App\User', 'users_challenges');
     }
-    public function result(){
+
+    public function results(){
     	return $this->belongsToMany('App\Result', 'users_challenges_results');
     }
+    public function questions(){
+    	return $this->hasMany('App\Question');
+    }
+
 	
 }

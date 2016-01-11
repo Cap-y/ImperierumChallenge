@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User as User;
+
 use Illuminate\Http\JsonResponse;
+
 
 class UserController extends Controller
 {
@@ -19,6 +21,10 @@ class UserController extends Controller
     public function index()
     {
 
+        $users = User::all();
+        return $users->toJson();
+
+
     }
 
     /**
@@ -28,7 +34,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
+        
     }
 
     /**
@@ -39,7 +46,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User;
+
+        $user->firstname = 'Billy';
+        $user->lastname = 'Bong';
+        $user->alias = 'Någon';
+        $user->city = 'Långtbortistan';
+        $user->profilepic = 'nope';
+        $user->secrecy = '1';
+
+        $user->save();
     }
 
     /**
@@ -50,17 +66,30 @@ class UserController extends Controller
      */
     public function show($id){
 
+
+        $user = User::find($id);
+        $uservalues = array(
+            'firstname' => $user->firstname,
+            'lastname' => $user->lastname,
+            'alias' => $user->alias,
+            'city' => $user->city,
+            'profilpic' => $user->profilepic
+            );
+        $jsondata = array('user' => ($uservalues));
+        return response()->json($jsondata);
+    
+
         $user = User::find($id);
         $uservalues = array(
             $user->firstname,
             $user->lastname,
             $user->alias,
-            $user->city,
-            $user->profilepic
+            $user->city
             );
-        $jsondata = json_encode($uservalues);
-        return $jsondata; 
-    
+        $uservalues.toJson();
+        
+
+
 }
     /*
      * Show the form for editing the specified resource.

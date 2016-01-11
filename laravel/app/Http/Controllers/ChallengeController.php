@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Options as Options;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Challenge as Challenge;
 use Illuminate\Http\JsonResponse;
 
 class ChallengeController extends Controller
-{
     /**
      * Display a listing of the resource.
      *
@@ -27,9 +26,15 @@ class ChallengeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+
+    public function create($id){
+        
+        /********************************/
+        /*         Jesper Start         */
+        /********************************/
+
+        
+        
     }
 
     /**
@@ -40,7 +45,17 @@ class ChallengeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $question = new Question;
+
+        $question->name = 'Har du bakat?';
+        $question->description = 'Lets bake them buns';
+        $question->type = '1';
+        $question->admin = '1';
+        $question->secrecy = '1';
+        $question->thumbnail = 'nope';
+        $question->active = '1';
+
+        $question->save();
     }
 
     /**

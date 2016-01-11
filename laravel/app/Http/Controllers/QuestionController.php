@@ -29,7 +29,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -40,7 +40,13 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $questions = new Question;
+
+        $questions->question = 'Kan du baka?';
+        $questions->points = '5';
+        $questions->type = '1';
+
+        $questions->save();
     }
 
     /**
