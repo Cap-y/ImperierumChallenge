@@ -32,6 +32,8 @@ class ChallengeController extends Controller
         /********************************/
         /*         Jesper Start         */
         /********************************/
+
+        
         
     }
 
